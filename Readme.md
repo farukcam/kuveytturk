@@ -2,7 +2,7 @@
 
 Komut satırından bu kodu çalıştırınız:
 ```
-composer require farukcam/kuveytturk dev-master
+composer require farukcam/kuveytturk
 ```
 
 ```config/app.php``` dosyasına aşağıda bulunan satırları ekliyoruz.
