@@ -20,6 +20,8 @@ class BaseClass {
     protected $orderid;
     protected $amount;
     protected $cardexpiredateyear;
+    protected $successurl = "";
+    protected $errorurl = "";
     protected $cardtype = "MasterCard";
     protected $InstallmentCount = 0;
     protected $batchid = 0;
@@ -148,7 +150,27 @@ class BaseClass {
         return $this->batchid;
     }
 
+    public function setErrorUrl($url)
+    {
+        $this->errorurl = $url;
 
+        return $this;
+    }
 
+    public function getErrorUrl()
+    {
+        return $this->errorurl;
+    }
 
+    public function setSuccessUrl($url)
+    {
+        $this->successurl = $url;
+
+        return $this;
+    }
+
+    public function getSuccessUrl()
+    {
+        return $this->successurl;
+    }
 }

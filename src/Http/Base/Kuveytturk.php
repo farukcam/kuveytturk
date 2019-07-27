@@ -16,11 +16,11 @@ class Kuveytturk extends BaseClass {
     protected function process()
     {
         $HashedPassword = base64_encode(sha1(Config::get("kuveytturk.Password"), "ISO-8859-9")); //md5($Password);
-        $HashData = base64_encode(sha1(Config::get("kuveytturk.MerchantId") . $this->orderid . $this->amount . Config::get("kuveytturk.OkUrl") . Config::get("kuveytturk.FailUrl") . Config::get("kuveytturk.UserName") . $HashedPassword, "ISO-8859-9"));
+        $HashData = base64_encode(sha1(Config::get("kuveytturk.MerchantId") . $this->orderid . $this->amount . ($this->successurl ? $this->successurl : Config::get("kuveytturk.OkUrl")) .( $this->errorurl ? $this->errorurl :  Config::get("kuveytturk.FailUrl")) . Config::get("kuveytturk.UserName") . $HashedPassword, "ISO-8859-9"));
         $xml= '<KuveytTurkVPosMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">'
             . '<APIVersion>' . Config::get("kuveytturk.APIVersion") . '</APIVersion>'
-            . '<OkUrl>' . Config::get("kuveytturk.OkUrl") . '</OkUrl>'
-            . '<FailUrl>' . Config::get("kuveytturk.FailUrl") . '</FailUrl>'
+            . '<OkUrl>' . ($this->successurl ? $this->successurl : Config::get("kuveytturk.OkUrl")) . '</OkUrl>'
+            . '<FailUrl>' . ( $this->errorurl ? $this->errorurl :  Config::get("kuveytturk.FailUrl")) . '</FailUrl>'
             . '<HashData>' . $HashData . '</HashData>'
             . '<MerchantId>' . Config::get("kuveytturk.MerchantId") . '</MerchantId>'
             . '<CustomerId>' . Config::get("kuveytturk.CustomerId") . '</CustomerId>'
