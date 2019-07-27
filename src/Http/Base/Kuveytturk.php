@@ -5,7 +5,7 @@
  * @author Faruk Çam <mail@farukix.com>
  * Copyright (c) 2018 | farukix.com
  */
-namespace Farukcam\Kuveytturk\Http\Base;
+namespace farukcam\Kuveytturk\Http\Base;
 
 use Config;
 use Exception;
@@ -26,8 +26,8 @@ class Kuveytturk extends BaseClass {
             . '<CustomerId>' . Config::get("kuveytturk.CustomerId") . '</CustomerId>'
             . '<UserName>' . Config::get("kuveytturk.UserName") . '</UserName>'
             . '<CardNumber>' . $this->cardnumber . '</CardNumber>'
-            . '<CardExpireDateYear>' . $this->cardexpiredateyear . '</CardExpireDateYear>'
-            . '<CardExpireDateMonth>' . $this->cardexpiredatemonth . '</CardExpireDateMonth>'
+            . '<CardExpireDateYear>' . ($this->cardexpiredateyear < 10 ? '0'.$this->cardexpiredateyear:$this->cardexpiredateyear) . '</CardExpireDateYear>'
+            . '<CardExpireDateMonth>' . ($this->cardexpiredatemonth < 10 ? '0'.$this->cardexpiredatemonth:$this->cardexpiredatemonth) . '</CardExpireDateMonth>'
             . '<CardCVV2>' . $this->cardcvv2 . '</CardCVV2>'
             . '<CardHolderName>' . $this->name . '</CardHolderName>'
             . '<CardType>' . $this->cardtype . '</CardType>'
@@ -41,6 +41,7 @@ class Kuveytturk extends BaseClass {
             . '<TransactionSecurity>' . Config::get("kuveytturk.TransactionSecurity") . '</TransactionSecurity>'
             . '<TransactionSide>' . Config::get("kuveytturk.Type") . '</TransactionSide>'
             . '</KuveytTurkVPosMessage>';
+
         try
         {
             $ch = curl_init();

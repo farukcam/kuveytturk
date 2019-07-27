@@ -7,10 +7,10 @@
  * Copyright (c) 2018 | farukix.com
  */
 
-namespace Farukcam\Kuveytturk;
+namespace farukcam\Kuveytturk;
 
 use Illuminate\Support\ServiceProvider;
-use Farukcam\Kuveytturk\Http\Base\Kuveytturk;
+use farukcam\Kuveytturk\Http\Base\Kuveytturk;
 
 class KuveytturkServiceProvider extends ServiceProvider {
 

@@ -13,7 +13,7 @@ return [
     'providers' => [
         // ...
 
-        Farukcam\Kuveytturk\KuveytturkServiceProvider::class
+        farukcam\Kuveytturk\KuveytturkServiceProvider::class
     ],
 
     // ...
@@ -21,7 +21,7 @@ return [
     'aliases' => [
         // ...
 
-        'Kuveytturk'    => Farukcam\Kuveytturk\Facades\Kuveytturk::class
+        'Kuveytturk'    => farukcam\Kuveytturk\Facades\Kuveytturk::class
     ],
 );
 ```
@@ -62,7 +62,7 @@ public function index()
     $kuveytturk = Kuveytturk::setName('Faruk Çam')
         ->setCardNumber(1234567891234567)
         ->setCardExpireDateMonth(02)
-        ->setCardExpireDateYear(18)
+        ->setCardExpireDateYear(20)
         ->setCardCvv2(123)
         ->setOrderId(12345)
         ->setAmount(100)

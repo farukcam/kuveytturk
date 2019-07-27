@@ -7,7 +7,7 @@
  * Copyright (c) 2018 | farukix.com
  */
 
-namespace Farukcam\Kuveytturk\Http\Base;
+namespace farukcam\Kuveytturk\Http\Base;
 
 
 class BaseClass {

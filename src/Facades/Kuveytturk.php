@@ -7,7 +7,7 @@
  * Copyright (c) 2018 | farukix.com
  */
 
-namespace Farukcam\Kuveytturk\Facades;
+namespace farukcam\Kuveytturk\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
