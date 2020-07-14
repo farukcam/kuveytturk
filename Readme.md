@@ -43,7 +43,7 @@ return [
 
 
 ```code
-composer update
+php artisan vendor:publish
 ```
 komutunu kullanarak ``` config/kuveytturk.php``` dosyasını yayınlıyoruz.
 
