@@ -1,9 +1,22 @@
-# Laravel 5 Kuveyt Turk Sanal Pos
+# Laravel Kuveyt Turk Sanal Pos
 
 Komut satırından bu kodu çalıştırınız:
+Laravel 7'den küçük sürümler için : 
 ```
 composer require farukcam/kuveytturk
 ```
+
+Laravel 7 için : 
+```composer.json``` içerisinde ```require``` tagının içerisine 
+
+```json
+"farukcam/kuveytturk": "^1.2",
+```
+yazıp, ardından
+``` composer update ```
+yapıyoruz.
+
+sonrasında ;
 
 ```config/app.php``` dosyasına aşağıda bulunan satırları ekliyoruz.
 ```php
@@ -27,8 +40,10 @@ return [
 ```
 # Ayarlar
 
+
+
 ```code
-php artisan vendor:publish
+composer update
 ```
 komutunu kullanarak ``` config/kuveytturk.php``` dosyasını yayınlıyoruz.
 
