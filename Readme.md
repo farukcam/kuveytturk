@@ -1,5 +1,7 @@
 # Laravel Kuveyt Turk Sanal Pos
 
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/farukcam"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee 😇"><span style="margin-left:5px;font-size:19px !important;">Buy me a coffee 😇</span></a>
+
 Komut satırından bu kodu çalıştırınız:
 Laravel 7'den küçük sürümler için : 
 ```
