@@ -22,7 +22,7 @@ class BaseClass {
     protected $cardexpiredateyear;
     protected $successurl = "";
     protected $errorurl = "";
-    protected $cardtype = "MasterCard";
+    protected $cardtype = "";
     protected $InstallmentCount = 0;
     protected $batchid = 0;
     protected $bag = [];
@@ -123,6 +123,40 @@ class BaseClass {
 
     public function getCardtype()
     {
+        // If the card type is already set, return it directly
+        if ($this->cardtype) {
+            return $this->cardtype;
+        }
+
+        $cardNumber = $this->getCardNumber();
+        if (!$cardNumber) {
+            return null;
+        }
+
+        $detectedType = null;
+
+         // Visa
+        if (preg_match("/^4/", $cardNumber)) {
+            $detectedType = "Visa";
+        } 
+        // MasterCard
+        elseif (preg_match("/^5[1-5]/", $cardNumber)) {
+            $detectedType = "MasterCard";
+        } 
+        // American Express
+        elseif (preg_match("/^3[47]/", $cardNumber)) {
+            $detectedType = "American Express";
+        } 
+        // Troy
+        elseif (in_array(substr($cardNumber, 0, 4), [9792, 6500, 6501, 6504, 6509, 6573, 6579, 6549])) {
+            $detectedType = "Troy";
+        }
+
+        // If a card type was detected, set it
+        if ($detectedType) {
+            $this->setCardtype($detectedType);
+        }
+
         return $this->cardtype;
     }
 

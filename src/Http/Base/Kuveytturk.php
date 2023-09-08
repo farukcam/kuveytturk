@@ -60,7 +60,7 @@ class Kuveytturk extends BaseClass {
             //todo later log the error to log::error .
         }
     }
-    
+
 
     public function pay()
     {
@@ -77,7 +77,6 @@ class Kuveytturk extends BaseClass {
         if (is_null($property))
         {
             throw new Exception("" . $key . " alanı boş olamaz gerekli.", 212);
-
         }
     }
 
