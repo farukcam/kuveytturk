@@ -56,13 +56,11 @@ class Kuveytturk extends BaseClass {
             curl_close($ch);
         } catch (Exception $e)
         {
-            echo 'Caught exception: ', $e->getMessage(), "\n";
+            throw $e;
+            //todo later log the error to log::error .
         }
-        echo($data);
-        error_reporting(E_ALL);
-        ini_set("display_errors", 1);
     }
-
+    
 
     public function pay()
     {
