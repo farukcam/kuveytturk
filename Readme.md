@@ -62,7 +62,7 @@ return [
     "OkUrl"               => "Basarili sonuç alinirsa, yönledirelecek sayfa",
     "FailUrl"             => "Basarisiz sonuç alinirsa, yönledirelecek sayfa",
     "UserName"            => "Web Yönetim ekranlarindan olusturulan api rollü kullanici", // Test API Kullanıcısı : apiuser1
-    "Password"            => "Web Yönetim ekranlarindan olusturulan api rollü kullanici sifresi",  // Test API Kullanıcı Şifresi : Api123
+    "Password"            => "Web Yönetim ekranlarindan olusturulan api rollü kullanici sifresi",  // Test API Kullanıcı Şifresi : api123
     "TransactionSecurity" => "3" // 3d Secure = 3 , 3d'siz = 1
 ];
 
