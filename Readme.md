@@ -77,11 +77,11 @@ use Kuveytturk;
 public function index()
 {
     $kuveytturk = Kuveytturk::setName('Faruk Çam')
-        ->setCardNumber(1234567891234567)
-        ->setCardExpireDateMonth(02)
-        ->setCardExpireDateYear(20)
-        ->setCardCvv2(123)
-        ->setOrderId(12345)
+        ->setCardNumber(4033602562020327)
+        ->setCardExpireDateMonth(01)
+        ->setCardExpireDateYear(30)
+        ->setCardCvv2(861)
+        ->setOrderId(1)
         ->setAmount(100)
         ->pay();
 }
